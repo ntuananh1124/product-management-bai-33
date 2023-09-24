@@ -1,0 +1,77 @@
+@import '../scss/mixins';
+@import '../scss/var.scss';
+
+.product {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    &__item {
+        flex-basis: 24%;
+        background-color: aliceblue;
+        position: relative;
+    }
+
+    &__img {
+        width: 100%;
+        position: relative;
+
+        & > img {
+            width: 100%;
+            height: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+        }
+    }
+
+    &__info {
+        margin: 10px 15px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+
+    &__discount {
+        width: 35px;
+        height: 35px;
+        background-color: yellow;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        border-radius: 50%;
+        color: red;
+        font-size: 15px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    &__des {
+        @include text-limit(1.4, 2);
+    }
+
+    &__price {
+        position: absolute;
+        top: -20px;
+        right: 0;
+        margin: 0;
+        color: red;
+    }
+
+    &__action {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 10px 10px 10px 0;
+        display: flex;
+        column-gap: 7px;
+    } 
+
+    &__edit {
+        @include btn($main-color);
+    }
+
+    &__delete {
+        @include btn(green);
+    }
+}

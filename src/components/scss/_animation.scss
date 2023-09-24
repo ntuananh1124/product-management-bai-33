@@ -1,0 +1,12 @@
+// Sub Menu Animation
+@keyframes rotateY {
+    0% {
+        transform: rotateY(90deg)
+    }
+    80% {
+        transform: rotateY(-10deg)
+    }
+    100% {
+        transform: rotateY(0)
+    }
+}

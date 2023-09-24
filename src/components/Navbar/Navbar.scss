@@ -1,0 +1,96 @@
+@import "../scss/var.scss";
+@import "../scss/animation";
+
+.nav {
+    padding: 0 190px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    transition: 0.3s ease;
+
+    &__show {
+        display: block;
+    }
+
+    &__hidden {
+        display: none;
+    }
+
+    &__main {
+        display: flex;
+        margin: 0;
+        padding: 0;
+
+        &__item {
+            list-style: none;
+            position: relative;
+
+            &:hover > &__sub-menu {
+                display: block;
+            }
+
+            &__sub-menu {
+                display: none;
+                transition: 0.3s ease;
+                border-radius: 5px;
+                width: 390px;
+                position: absolute;
+                top: 120%;
+                background-color: white;
+                box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                z-index: 999;
+                animation: rotateY 300ms ease-in-out;
+                translate: -25% 0;
+
+                &::after {
+                    content: "";
+                    width: 100%;
+                    height: 20px;
+                    position: absolute;
+                    top: -20px;
+                }
+                
+                &__list {
+                    padding: 0;
+                    display: grid;
+                    grid-template-columns: auto auto;
+
+                    &__item {
+                        list-style: none;
+                        text-align: center;
+                        cursor: pointer;
+                        text-transform: capitalize; 
+                        padding: 10px;
+                        transition: 0.3s ease;
+
+                        &:hover {
+                            background-color: rgba(187, 187, 187, 0.264);
+                        }
+
+                        &:nth-child(1) {
+                            border-radius: 5px 0 0 0;
+                        }
+
+                        &:last-child {
+                            border-radius: 0 0 5px 0;
+                        }
+                    }
+                }
+            }
+
+            & > a {
+                display: inline-block;
+                text-decoration: none;
+                color: black;
+                padding: 15px;
+                transition: 0.3s ease;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-weight: 600;
+
+                &:hover {
+                    color: $main-color;
+                }
+            }
+        }
+    }
+}

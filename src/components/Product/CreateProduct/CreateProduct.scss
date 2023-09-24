@@ -1,0 +1,50 @@
+@import '../../scss/var.scss';
+@import '../../scss/mixins.scss';
+
+.create-product {
+    border: none;
+    border-radius: 50%;
+    background-color: $main-color;
+    color: white;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    line-height: 40px;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+    outline: none;
+}
+
+input, select {
+    width: 100%;
+}
+
+.form {
+    &__name {
+        text-align: center;
+    }
+
+    &__des {
+        resize: none;
+    }
+
+    &__btn {
+        display: flex;
+        justify-content: flex-end;
+        column-gap: 10px;
+        margin-top: 20px;
+
+        &__create {
+            @include btn(green);
+        }
+    
+        &__cancel {
+            @include btn(red);
+        }
+    }
+}
